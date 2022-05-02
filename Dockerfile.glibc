@@ -5,7 +5,7 @@ WORKDIR /kubemem
 COPY *.c *.h Makefile ./
 RUN make
 
-FROM debian:stable-slim
+FROM scratch
 COPY --from=builder /kubemem/kubemem /bin/kubemem
 
 CMD ["/bin/kubemem"]

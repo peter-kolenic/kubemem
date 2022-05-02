@@ -5,6 +5,6 @@ WORKDIR /kubemem
 COPY *.c *.h Makefile ./
 RUN make
 
-FROM alpine:latest
+FROM scratch
 COPY --from=builder /kubemem/kubemem /bin
 CMD ["/bin/kubemem"]
